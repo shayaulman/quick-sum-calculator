@@ -69,14 +69,14 @@ const updateSum = (card) => {
   </header>
 
   <main class="bg-gray-100 py-12">
-    <div class="p-6 max-w-3xl mx-auto">
-      <div class="space-y-6">
+    <div class="p-6 max-w-5xl mx-auto">
+      <div class="">
         <!-- Card Loop -->
         <transition-group
           name="fade-slide"
           mode="out-in"
           tag="div"
-          class="space-y-6"
+          class="grid grid-cols-3 gap-4"
           enter-active-class="transition-transform transition-opacity duration-300 ease-in-out"
           leave-active-class="transition-transform transition-opacity duration-300 ease-in-out"
           enter-from-class="opacity-0 transform translate-y-8 scale-95"
@@ -95,14 +95,14 @@ const updateSum = (card) => {
                 autocomplete="off"
                 v-model="card.title"
                 placeholder="Enter title"
-                class="border border-gray-300 rounded-lg p-3 text-lg w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
+                class="border border-gray-300 rounded-lg py-1 px-3 text-lg w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
               />
             </div>
             <textarea
               v-model="card.text"
               @input="updateSum(card)"
               placeholder="Enter numbers separated by spaces"
-              class="border border-gray-300 rounded-lg p-3 w-full h-32 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              class="border border-gray-300 rounded-lg p-3 w-full h-40 focus:outline-none focus:ring-2 focus:ring-gray-500"
             ></textarea>
             <div class="flex justify-end text-gray-700 mt-4 text-lg">
               Sum: <span class="font-bold ml-2">{{ card.sum }}</span>
@@ -117,10 +117,10 @@ const updateSum = (card) => {
         </transition-group>
 
         <!-- Add Card Button -->
-        <div class="flex justify-end">
+        <div class="flex justify-center">
           <button
             @click="addCard"
-            class="text-lg flex items-center bg-gray-800 text-white py-1 px-4 rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+            class="w-96 my-12 text-center text-lg bg-gray-800 text-white py-1 px-4 rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
             <span class="mr-2">+</span>
             New
